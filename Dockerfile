@@ -18,4 +18,8 @@ RUN apk upgrade --update \
     && apk del wget \
     && rm -rf /var/cache/apk/*
 
-CMD ["/usr/local/bin/brook server -l :9999 -p 131415"]
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
