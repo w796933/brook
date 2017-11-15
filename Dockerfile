@@ -18,4 +18,4 @@ RUN apk upgrade --update \
     && apk del wget \
     && rm -rf /var/cache/apk/*
 
-CMD ["brook server -l :9999 -p 131415"]
+CMD ["/usr/local/bin/brook server -l :9999 -p 131415"]
